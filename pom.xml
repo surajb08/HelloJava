@@ -51,32 +51,31 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<!--				<configuration>-->
-<!--					<executable>false</executable>-->
-<!--				</configuration>-->
+				<configuration>
+					<executable>false</executable>
+				</configuration>
 			</plugin>
 			
 			
-<!--			<plugin>-->
-<!--				<groupId>org.codehaus.mojo</groupId>-->
-<!--				<artifactId>exec-maven-plugin</artifactId>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<id>add-source-context</id>-->
-<!--						<phase>package</phase>-->
-<!--						<goals>-->
-<!--							<goal>exec</goal>-->
-<!--						</goals>-->
-<!--						<configuration>-->
-<!--							<executable>jar</executable>-->
-<!--							<commandlineArgs>-->
-<!--								uf ${project.build.directory}/${project.build.finalName}.jar-->
-<!--&lt;!&ndash;								-C ${project.build.directory}/source-context.json&ndash;&gt;-->
-<!--							</commandlineArgs>-->
-<!--						</configuration>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--			</plugin>-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source-context</id>
+						<phase>package</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>jar</executable>
+							<commandlineArgs>
+								uf ${project.build.directory}/${project.build.finalName}.jar -C ${project.build.directory}/classes source-context.json
+							</commandlineArgs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			
 		</plugins>
 	</build>
