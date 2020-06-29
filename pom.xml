@@ -70,8 +70,7 @@
 						<configuration>
 							<executable>jar</executable>
 							<commandlineArgs>
-								uf ${project.build.directory}/${project.build.finalName}.jar
-								-C ${project.build.directory}/classes source-context.json
+								uf ${project.build.directory}/${project.build.finalName}.jar -C ${project.build.directory}/classes source-context.json
 							</commandlineArgs>
 						</configuration>
 					</execution>
